@@ -1,12 +1,13 @@
 import React from 'react';
 import STORE from './Store';
+import CardComponent from './Card';
 
 const ListComponent = (props) => {
   return (
     <>
       <h2>{props.listItem.header}</h2>
-      {props.listItem.cardIds.map((cardIds)=> {
-        return <STORE key={cardIds} />
+      {props.listItem.cardIds.map(cardIds=> {
+        return <CardComponent />
       })}
     </>
   )

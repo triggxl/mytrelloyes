@@ -9,8 +9,10 @@ const App = (props) => {
       <div>
         {props.store.lists.map((listItem)=> {
           //passing props for entire list item && store (index.js)
-          return <ListComponent listItem={listItem} store={props.store} />
+          return <ListComponent header={listItem.header} cards={props.store.cards} />
         })}
+        <CardComponent />
+        {/* <STORE /> */}
       </div>
   )
 }
