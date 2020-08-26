@@ -5,7 +5,7 @@ import CardComponent from './Card';
 const ListComponent = (props) => {
   return (
     <>
-      <STORE {allCards.title}/>
+      {/* <STORE {allCards.title}/> */}
       <h2>{props.listItem.header}</h2>
       {props.listItem.cardIds.map(cardId => {
         console.log(props);
