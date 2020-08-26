@@ -15,9 +15,14 @@ const CardComponent = props => {
 export default CardComponent;
 
 /* 
-I'm having trouble figuring out the remaining objectives for this assignment. 
-Will you help me write out some pseudo code for what I have left to include?
+The Card component should render markup matching the design.html: a div with a class of 'Card' containing an h3 for the card's title and a p element for the card's content.
+The Card component accepts 2 props: title and content.
+title is a string of the card's title.
+content is a string of the card's content.
+These props will be passed in for each Card from the List component.
+*/
 
+/*
 write functions to return the HTML. 
 Pass variables as props, 
 and HTML elements as children
