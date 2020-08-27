@@ -1,3 +1,4 @@
+//rendering our App to DOM
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';

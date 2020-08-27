@@ -1,20 +1,22 @@
 import React from 'react';
-import STORE from './Store';
 import CardComponent from './Card';
+import './List.css';
 
 const ListComponent = (props) => {
   return (
     <>
-      {/* <STORE {allCards.title}/> */}
-      <h2>{props.listItem.header}</h2>
-      {props.listItem.cardIds.map(cardId => {
-        console.log(props);
-        return <CardComponent cardId={cardId}/>
+      <section className="List">
+        <header>
+          <div className="List-cards"></div>
+        </header>
+      </section>
+      <h2>{props.header}</h2>
+      {props.cards.map(cardDetails => {
+        return <CardComponent title={cardDetails.title} content={cardDetails.content} />
       })}
     </>
   )
 }
-
 
 export default ListComponent;
 

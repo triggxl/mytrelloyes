@@ -1,20 +1,20 @@
 import React from 'react';
-import CardComponent from './Card';
-import STORE from './Store';
 import ListComponent from './List';
+import './App.css';
 
 const App = props => {
-  console.log(props.store);
   return (
       <div>
-        {/* mapping through variable listItem and returning ListComponent with props of listItem, cards, and key */}
+        {/*iterating over lists array in STORE*/}
         {props.store.lists.map((listItem)=> {
-          //passing props for entire list item && store (index.js)
-          //.find to pass down to list component to grab cards in cards array
-          return <ListComponent listItem={listItem} cards={props.store.allCards} key={listItem.id} />
+          // iterating through cards ids
+          const cardDetailsArray = listItem.cardIds.map(cardLetter => {
+            // returning card details in the allCards object
+            return props.store.allCards[cardLetter];
+          })
+          //creating props to pass to ListComponent
+          return <ListComponent header={listItem.header} cards={cardDetailsArray}/>
         })}
-        {/* <CardComponent />
-        <STORE /> */}
       </div>
   )
 }
@@ -22,13 +22,17 @@ const App = props => {
 export default App;
 
 /*
-1. create new component file ex: ContactCard.js
-2. create component instances to use <ContactCard />
+1. create new component file 
+  ex: ContactCard.js
+2. create component instances to use 
+  ex: <ContactCard />
 3. add import to file where component is used in order to access new instances
 4. create props or "attributes" for each instance, unique to the dynamic information you are trying to pass
-  <ContactCard name="Mr. Wiskerson" imgURL: "www.cat.com" phone:"9824938438 email: ""/>
+  <ContactCard name="Mr. Wiskerson" imgURL= "www.cat.com" phone="9824938438" email=""/>
 5. add function parameter (props) to file where props will be passed
+
 */
+
 /*
 The App component should render markup matching the design.html: the main element, a header with the h1 and a div with class 'App-list'.
 The App component will accept 1 prop, store.
