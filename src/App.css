@@ -27,4 +27,5 @@ body {
 
 .App-list {
   display: flex;
+  flex-direction: row;
 }

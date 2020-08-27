@@ -6,14 +6,15 @@ const ListComponent = (props) => {
   return (
     <>
       <section className="List">
-        <header>
-          <div className="List-cards"></div>
+        <header className="List-cards">
+          <h2>{props.header}</h2>
         </header>
+        <div className="List-cards">
+          {props.cards.map(cardDetails => {
+            return <CardComponent title={cardDetails.title} content={cardDetails.content} />
+            })}
+        </div>
       </section>
-      <h2>{props.header}</h2>
-      {props.cards.map(cardDetails => {
-        return <CardComponent title={cardDetails.title} content={cardDetails.content} />
-      })}
     </>
   )
 }
@@ -31,9 +32,4 @@ The List should render a Card component for each of the cards in the cards array
 Each instance of the Card component should be passed 2 props (and a key). The 2 props are title and content.
 The title prop is a string for the Card's title.
 The content prop is a string of the Card's content.
-*/
-
-/*
-Q: I'm having trouble creating and passing props between components 
-benefits of using class component vs component
 */

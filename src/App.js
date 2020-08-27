@@ -4,9 +4,12 @@ import './App.css';
 
 const App = props => {
   return (
-      <div>
-        {/*iterating over lists array in STORE*/}
-        {props.store.lists.map((listItem)=> {
+      <>
+      <header>
+        <h1 className="App-list"></h1>
+        <div className="App-list">
+           {/*iterating over lists array in STORE*/}
+          {props.store.lists.map((listItem)=> {
           // iterating through cards ids
           const cardDetailsArray = listItem.cardIds.map(cardLetter => {
             // returning card details in the allCards object
@@ -15,7 +18,10 @@ const App = props => {
           //creating props to pass to ListComponent
           return <ListComponent header={listItem.header} cards={cardDetailsArray}/>
         })}
-      </div>
+        </div>
+      </header>
+       
+      </>
   )
 }
 
