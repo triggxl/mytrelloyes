@@ -3,6 +3,7 @@ import CardComponent from './Card';
 import './List.css';
 
 const ListComponent = (props) => {
+  console.log(props)
   return (
     <>
       <section className="List">
@@ -12,12 +13,14 @@ const ListComponent = (props) => {
         <div className="List-cards">
           {props.cards.map(cardDetails => {
             return <CardComponent title={cardDetails.title} content={cardDetails.content} />
-            })}
+          })}
         </div>
       </section>
     </>
   )
 }
+
+//Error: https://www.debuggr.io/react-map-of-undefined/#wrapping-up
 
 export default ListComponent;
 

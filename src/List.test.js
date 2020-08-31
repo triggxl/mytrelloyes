@@ -1,0 +1,16 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ListComponent from './List';
+
+describe('List Component', () => {
+  //wanting to pick something within ListComponent to add and remove an element to for smoke test
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<ListComponent className="List-cards" />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
+  //also need to create a snapshot test (what could I test as an example?)
+})
+
+
+
