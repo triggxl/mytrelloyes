@@ -11,9 +11,9 @@ const ListComponent = (props) => {
           <h2>{props.header}</h2>
         </header>
         <div className="List-cards">
-          {props.cards.map(cardDetails => {
-            return <CardComponent title={cardDetails.title} content={cardDetails.content} />
-          })}
+          {props.cards ? props.cards.map(cardDetails => {
+            return <CardComponent title={cardDetails.title} content={cardDetails.content}/> : null
+          })};
         </div>
       </section>
     </>
@@ -21,6 +21,7 @@ const ListComponent = (props) => {
 }
 
 //Error: https://www.debuggr.io/react-map-of-undefined/#wrapping-up
+//You're trying to use an array before checking that it is defined
 
 export default ListComponent;
 
