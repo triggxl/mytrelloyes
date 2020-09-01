@@ -12,8 +12,8 @@ const ListComponent = (props) => {
         </header>
         <div className="List-cards">
           {props.cards ? props.cards.map(cardDetails => {
-            return <CardComponent title={cardDetails.title} content={cardDetails.content}/> : null
-          })};
+            return <CardComponent title={cardDetails.title} content={cardDetails.content}/> 
+          }): " "} 
         </div>
       </section>
     </>
