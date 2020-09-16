@@ -3,16 +3,15 @@ import CardComponent from './Card';
 import './List.css';
 
 const ListComponent = (props) => {
-  console.log(props)
   return (
     <>
-      <section className="List">
+      <section id={props.index} className="List">
         <header className="List-cards">
           <h2>{props.header}</h2>
         </header>
-        <div className="List-cards">
-          {props.cards ? props.cards.map(cardDetails => {
-            return <CardComponent title={cardDetails.title} content={cardDetails.content}/> 
+        <div className="List-cards" id="list-cards">
+          {props.cards ? props.cards.map((cardDetails, index) => {
+            return <CardComponent title={cardDetails.title} content={cardDetails.content} id={cardDetails.id} deleteCard={props.deleteCard}/> 
           }): " "} 
         </div>
       </section>
@@ -20,8 +19,7 @@ const ListComponent = (props) => {
   )
 }
 
-//Error: https://www.debuggr.io/react-map-of-undefined/#wrapping-up
-//You're trying to use an array before checking that it is defined
+//Error: https://www.debuggr.io/react-map-of-undefined/#wrapping-up --> You're trying to use an array before checking that it is defined
 
 export default ListComponent;
 

@@ -6,8 +6,8 @@ import renderer from 'react-test-renderer';
 describe('Card Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<CardComponent />, div);
-    ReactDOM.unmountComponentAtNode(div);
+      ReactDOM.render(<CardComponent />, div);
+      ReactDOM.unmountComponentAtNode(div);
   });
 
   it('renders the UI as expected', () => {

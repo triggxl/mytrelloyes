@@ -3,12 +3,14 @@ import './Card.css';
 
 const CardComponent = props => { 
   return ( 
-  <> 
-    <div className="Card"> 
-      <h3>{props.title}</h3> 
-      <p>{props.content}</p> 
-    </div> 
-  </> 
+    <> 
+      <div className="Card"> 
+        <h3>{props.title}</h3> 
+        <p>{props.content}</p>
+        {/* passing deleteCard from app as CBfx to say 'hey delete the title and content of this selected list'  */}
+        <button onClick={()=> props.deleteCard(props.id)}>Delete</button>
+      </div> 
+    </> 
     ) 
 }
 
